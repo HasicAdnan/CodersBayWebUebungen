@@ -1,13 +1,26 @@
 let nummer = prompt("Bitte geben Sie Ihre Nummer ein:");
 
-function fn(x) {
-  if (x % 2 === 0) {
-    console.log(x + " ist gerade Zahl");
-    return true;
+function isEven(x) {
+  if (!isNaN(x)) {
+    if (x % 2 === 0) {
+      return true;
+    } else if (x % 2 !== 0) {
+      return false;
+    }
   } else {
-    console.log(x + " ist ungerade Zahl");
-    return false;
+    return undefined;
   }
 }
 
-let trueOderFalse = fn(nummer);
+let trueOderFalse = isEven(nummer);
+
+if (trueOderFalse === undefined) {
+  alert("Error! Bitte geben Sie Ihre Nummer ein!");
+  isEven(nummer);
+} else {
+  if (trueOderFalse) {
+    console.log(nummer + " ist gerade Zahl");
+  } else {
+    console.log(nummer + " ist ungerade Zahl");
+  }
+}
