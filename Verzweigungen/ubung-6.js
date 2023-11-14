@@ -7,7 +7,7 @@ var rechenOperator = prompt("Bitte geben Sie Ihre Operator ein:");
 switch (rechenOperator) {
     
         case "+":
-            console.log(ersteZahl + " + " + zweiteZahl + " = " + (ersteZahl + zweiteZahl));
+            console.log(ersteZahl + " + " + zweiteZahl + " = " + (Number(ersteZahl) + Number(zweiteZahl)));
             break;
         case "-":
             console.log(ersteZahl + " - " + zweiteZahl + " = " + (ersteZahl - zweiteZahl));
