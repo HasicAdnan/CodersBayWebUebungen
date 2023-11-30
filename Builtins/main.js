@@ -1,6 +1,6 @@
 
 
-//  Date Klasse: Lasse das aktuelle Datum und Uhrzeit schön formatiert ausgeben
+//1. Date Klasse: Lasse das aktuelle Datum und Uhrzeit schön formatiert ausgeben
 let timeCurrent = new Date();
 let date = "Datum: " + timeCurrent.getDate() + "."+ (timeCurrent.getMonth() + 1) + "." + timeCurrent.getFullYear() + "\nUhr: " + timeCurrent.getHours() + ":" + timeCurrent.getMinutes() + ":" + secondsFormat(timeCurrent.getSeconds());
 
@@ -19,4 +19,43 @@ function secondsFormat(sec) {
 //################################################################################
 
 
-//
+/*2. Math Klasse: Schreibe eine Funktion, die Zufallszahlen zwischen zwei Werten (die der Funktion
+übergeben werden) zurückgibt. Erweitere die Funktion um einen dritten Boolean-Parameter, der angibt,
+ob die Funktion nur ganze Zahlen oder auch Kommazahlen zurückgeben darf, rundet sie
+gegebenenfalls auf ganze Zahlen.*/
+
+let nummerAnfang = 10;
+let nummerEnde = 20;
+let range = nummerEnde - nummerAnfang +1;
+let randomNummer;
+
+randomNummer = ((Math.random() * range) + nummerAnfang);
+randomNummer = roundNummer();
+console.log(randomNummer);
+
+
+
+
+// check if a number is integer oder double
+function checkNummer(nummer) {
+    if(nummer %  1 != 0) {
+        //console.log("Double");
+        return false;
+} else if(nummer % 1 == 0) {
+   // console.log("Integer");
+    return true;
+}
+}
+
+// round a number
+function roundNummer() {
+    if (!checkNummer(randomNummer)) {
+        randomNummer = Math.floor(randomNummer);
+        return randomNummer;
+} else
+ {
+    return randomNummer;
+ }
+}
+
+//################################################################################
