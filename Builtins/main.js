@@ -77,3 +77,18 @@ console.log(arr);
 //################################################################################
 
 
+//Object Klasse: Lasst alle Keys eines Objekts ausgeben - ohne eine for-in Schleife zu nutzen
+let auto = {
+    name: "Volvo",
+    model: "S40",
+    year: 2016,
+    color: "Black",
+    price: 1000000,
+    fuel: "Diesel"
+};
+
+console.log(Object.keys(auto));
+
+//################################################################################
+
+
