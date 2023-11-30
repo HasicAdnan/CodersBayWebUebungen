@@ -59,3 +59,21 @@ function roundNummer() {
 }
 
 //################################################################################
+
+
+//3. Array Klasse: Erstelle ein Array von Zahlen (nicht sortiert!), lass es sortieren.
+
+let arr = [];
+
+for (let i = 0; i < 10; i++) {
+    randomNummer = ((Math.random() * range) + nummerAnfang);
+    randomNummer = roundNummer();
+    arr.push(randomNummer);
+}
+arr.sort();
+
+console.log(arr);
+
+//################################################################################
+
+
