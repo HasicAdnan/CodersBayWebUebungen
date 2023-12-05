@@ -91,4 +91,20 @@ console.log(Object.keys(auto));
 
 //################################################################################
 
+//5. JSON Klasse: Erstelle ein Objekt und lass dieses als JSON formatiert ausgeben.
+
+let notebook = {
+    name: "Lenovo",
+    model: "IdeaPad",
+    year: 2016,
+    color: "Black",
+    price: 1000,
+    ram: "16gb",
+    typeOfRam: "ddr4",
+    cpu: "Intel Core i7-7500U"
+};
+
+console.log(JSON.stringify(notebook, null, 2));
+//################################################################################
+
 
