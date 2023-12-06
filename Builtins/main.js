@@ -137,7 +137,15 @@ function checkNumberSecondUserInputArray(userInput) {
 let decimalNumber = checkNumberFirstUserInputArray(userInput) + checkNumberSecondUserInputArray(userInput);
 console.log("Your binary number to decimal is: " + decimalNumber);
 
+/*7. String Klasse: Speicher den Text "Hallo Welt!" in einer Variable. Lass das Wort "Welt" mit einem Namen
+ersetzen. Gib die länge des Textes und den ersten Buchstaben aus. Zerteile dann den Text am
+Leerzeichen in ein Array und lass es ausgeben.*/
 
+let text = "Hallo Welt!";
+text = text.replace("Welt", "");
+console.log("Text: " + text);
+console.log("Länge des Textes : " + text.length);
+console.log(text[0]);
 
 
 
