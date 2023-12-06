@@ -107,4 +107,41 @@ let notebook = {
 console.log(JSON.stringify(notebook, null, 2));
 //################################################################################
 
+/*6. Number Klasse: Lass den Nutzer eine Ganze Zahl als Binärzahl (als String, nur 0 und 1) eingeben,
+wandle sie in eine Dezimalzahl um.*/
+
+
+let userInput = prompt("Bitte geben Sie eine Zahl nur 0 und 1");
+userInput = userInput.split(".");
+
+function checkNumberFirstUserInputArray(userInput) {
+let sumOfArray0 = 0;  
+for(let i = 0; i < userInput[0].length; i++) {
+    let numm = parseInt(userInput[0][i]);
+    let exponent = parseInt(userInput[0].length-1-i);
+    sumOfArray0 += numm * (Math.pow(2, exponent));
+} 
+return sumOfArray0;
+}
+
+function checkNumberSecondUserInputArray(userInput) {
+    let sumOfArray1 = 0;  
+    for(let i = 0; i < userInput[1].length; i++) {
+        let numm = parseInt(userInput[1][i]);
+        let exponent = parseInt(-1-i);
+        sumOfArray1+= numm * (Math.pow(2, exponent));
+    } 
+    return sumOfArray1;
+    }
+
+let decimalNumber = checkNumberFirstUserInputArray(userInput) + checkNumberSecondUserInputArray(userInput);
+console.log("Your binary number to decimal is: " + decimalNumber);
+
+
+
+
+
+
+
+
 
