@@ -4,7 +4,7 @@ import moment from 'moment';
 import readline from 'readline';
 import readFile from 'node:fs/promises';
 
-/*
+
 const fs = require('fs/promises');
 
 readFile('./package.json', 'utf8')
@@ -18,4 +18,3 @@ console.error('Error reading file', err);
 console.log('After read or error');
 });
 console.log('Before file was loaded');
-*/
