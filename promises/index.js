@@ -1,36 +1,63 @@
 import chalk from 'chalk';
 import moment from 'moment';
+import fs from 'fs';
 import readline from 'readline';
-import readFile from 'fs/promises';
+import { log } from 'console';
 
 
-const fs = require('fs/promises');
+const currentTime = moment().format('DD-MM-YYYY HH:mm:ss:ms');
 
-async function main() {
-    await fs.writeFile('test.txt', 'hello');
+
+
+
+fs.promises.readFile('data.json', 'utf-8')
+  .then((data) => {
+    console.log('File content:', data);
+  }) 
+  .catch((error) => {
+    console.error('Error reading file:', error);
+  });
+
+
+async function readFileAsync() {
+  try {
+    const data = await fs.promises.readFile('data.json', 'utf-8');
+    console.log('File content:', data);
+  } catch (error) {
+    console.error('Error reading file:', error);
   }
+}
 
-readFile('./package.json', 'utf8')
-.then((data) => {
-console.log('File read', data);
+readFileAsync();
+
+
+let prom = new Promise (function (resolve, reject) {
+    setTimeout(function() {
+        resolve("#");
+    }, 2000)
+
 })
-.catch((err) => {
-console.error('Error reading file', err);
-})
-.finally(() => {
-console.log('After read or error');
+
+function printHash(anfang, ende) {
+  let current = anfang;
+  setTimeout(function go() {
+    let strArray = ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"];
+    process.stdout.write(chalk.bgGreen(strArray[current]));
+    if (current < ende) {
+      setTimeout(go, 1000);
+    } else {
+      process.stdout.write('\n'); 
+    }
+    current++;
+  }, 1000);
+}
+
+
+prom.then(function(prom){
+ printHash(0,9);
+}, function(err){
+    console.log(err);
 });
-console.log('Before file was loaded');
 
-async function addProduct() {
-    const number = await prompt(chalk.bgGreenBright.bold('Geben Sie Produktnummer ein: '));
-    const name = await prompt(chalk.bgGreen.bold('Geben Sie Produktname ein: '));
-    const price = await prompt(chalk.bgGreenBright.bold('Geben Sie den Preis des Produkts ein: '));
-    
-  
-    const newProduct = { number, name, price };
-    data.push(newProduct);
-    console.log('Das Produkt wurde eingegeben:', newProduct);
-    askUser();
-  }
-  
+
+
